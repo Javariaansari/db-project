@@ -26,6 +26,14 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+app.get('/', (req,res))=>{
+  res.send({
+    activeStatus:true,
+    error:false,
+
+  })
+}
+
 // simple request logger
 app.use((req, res, next) => {
   console.log(`${req.method} ${req.originalUrl}`);
